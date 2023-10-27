@@ -18,7 +18,6 @@ export class ListNode {
   }
 }
 
-
 export class TreeNode {
   val: number;
   left: TreeNode | null;
