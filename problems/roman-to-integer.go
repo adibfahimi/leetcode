@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func romanToInt(s string) int {
 	romanMap := map[string]int{
 		"I": 1,
@@ -25,8 +23,4 @@ func romanToInt(s string) int {
 	}
 
 	return result
-}
-
-func main() {
-	fmt.Println(romanToInt("III")) // 3
 }
