@@ -2,26 +2,24 @@ package main
 
 func topKFrequent(nums []int, k int) []int {
 	frequencyMap := make(map[int]int)
-	for _, num := range nums {
-		frequencyMap[num]++
+
+	for _, i := range nums {
+		frequencyMap[i]++
 	}
 
-	result := make([]int, 0, k)
-
-	for len(result) < k {
+	var result []int
+	for i := 0; i < k; i++ {
 		maxFrequency := 0
-		maxNum := 0
+		frequentElement := 0
 
 		for num, frequency := range frequencyMap {
 			if frequency > maxFrequency {
 				maxFrequency = frequency
-				maxNum = num
+				frequentElement = num
 			}
 		}
-
-		result = append(result, maxNum)
-
-		delete(frequencyMap, maxNum)
+		result = append(result, frequentElement)
+		delete(frequencyMap, frequentElement)
 	}
 
 	return result
